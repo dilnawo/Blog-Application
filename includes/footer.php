@@ -1,7 +1,9 @@
-<hr>
+<main class="content">
 
-<footer>
-    <p>&copy; 2026 Blog Application</p>
+</main>
+
+<footer class="footer">
+    <p>&copy; <?php echo date("Y"); ?> My Blog Application | Developed by Dilki Nawodya</p>
 </footer>
 
 </body>

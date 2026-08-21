@@ -1,12 +1,32 @@
 <?php
-$host = "sql206.infinityfree.com";
-$username = "if0_42706998";
-$password = "v428xsFc9e7twCJ";
-$database = "if0_42706998_blog_db";
 
-$conn = new mysqli($host, $username, $password, $database);
+$envFile = __DIR__ . '/../.env';
+
+if (!file_exists($envFile)) {
+    die("Configuration file not found.");
+}
+
+$env = parse_ini_file($envFile);
+
+if ($env === false) {
+    die("Unable to read configuration file.");
+}
+
+$host = $env['DB_HOST'] ?? '';
+$username = $env['DB_USERNAME'] ?? '';
+$password = $env['DB_PASSWORD'] ?? '';
+$database = $env['DB_DATABASE'] ?? '';
+
+$conn = new mysqli(
+    $host,
+    $username,
+    $password,
+    $database
+);
 
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Database connection failed.");
 }
+
+$conn->set_charset("utf8mb4");
 ?>

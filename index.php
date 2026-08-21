@@ -97,9 +97,9 @@ if ($result->num_rows > 0) {
         ?>
     </p>
 
-    <a href="blog.php?id=<?php echo $row['id']; ?>">
-        Read More
-    </a>
+   <a class="read-more" href="blog.php?id=<?php echo $row['id']; ?>">
+    Read More →
+</a>
 
     <?php
     if (isset($_SESSION['user_id']) &&
@@ -108,16 +108,17 @@ if ($result->num_rows > 0) {
 
         <br><br>
 
-        <a href="edit_blog.php?id=<?php echo $row['id']; ?>">
-            Edit
-        </a>
+        <a class="edit-link" href="edit_blog.php?id=<?php echo $row['id']; ?>">
+    Edit
+</a>
 
-        |
+|
 
-        <a href="delete_blog.php?id=<?php echo $row['id']; ?>"
-           onclick="return confirm('Are you sure you want to delete this blog?');">
-            Delete
-        </a>
+<a class="delete-link"
+   href="delete_blog.php?id=<?php echo $row['id']; ?>"
+   onclick="return confirmDelete();">
+    Delete
+</a>
 
     <?php
     }

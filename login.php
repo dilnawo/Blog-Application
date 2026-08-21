@@ -3,67 +3,171 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 session_start();
+
 include "includes/config.php";
+
+$error = "";
 
 if (isset($_POST['login'])) {
 
     $email = trim($_POST['email']);
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT * FROM user WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
+    if (empty($email) || empty($password)) {
 
-    $result = $stmt->get_result();
-
-    if ($result->num_rows == 1) {
-
-        $user = $result->fetch_assoc();
-
-        if (password_verify($password, $user['password'])) {
-
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
-
-            header("Location: dashboard.php");
-            exit();
-
-        } else {
-            $error = "Incorrect password!";
-        }
+        $error = "Please enter your email and password.";
 
     } else {
-        $error = "User not found!";
+
+        $stmt = $conn->prepare(
+            "SELECT * FROM user WHERE email = ?"
+        );
+
+        if ($stmt) {
+
+            $stmt->bind_param("s", $email);
+
+            $stmt->execute();
+
+            $result = $stmt->get_result();
+
+            if ($result->num_rows == 1) {
+
+                $user = $result->fetch_assoc();
+
+                if (password_verify($password, $user['password'])) {
+
+                    $_SESSION['user_id'] = $user['id'];
+                    $_SESSION['username'] = $user['username'];
+
+                    header("Location: dashboard.php");
+                    exit();
+
+                } else {
+
+                    $error = "Incorrect password.";
+
+                }
+
+            } else {
+
+                $error = "No account found with this email.";
+
+            }
+
+            $stmt->close();
+
+        } else {
+
+            $error = "Something went wrong. Please try again.";
+
+        }
     }
 }
 
 include "includes/header.php";
 ?>
 
-<h2>Login</h2>
+<!-- =========================
+     LOGIN SECTION
+========================= -->
 
-<?php
-if(isset($error)){
-    echo "<p style='color:red;'>$error</p>";
-}
-?>
+<div class="auth-container">
 
-<form method="POST">
+    <div class="auth-box">
 
-    <label>Email</label><br>
-    <input type="email" name="email" required><br><br>
+        <div class="auth-header">
 
-    <label>Password</label><br>
-    <input type="password" name="password" required><br><br>
+            <div class="auth-icon">
+                🔐
+            </div>
 
-    <button type="submit" name="login">Login</button>
+            <h1>Welcome Back</h1>
 
-</form>
+            <p>
+                Login to your My Blog account
+            </p>
 
-<p>
-Don't have an account?
-<a href="register.php">Register</a>
-</p>
+        </div>
+
+
+        <?php if (!empty($error)) { ?>
+
+            <div class="auth-error">
+                <?php echo htmlspecialchars($error); ?>
+            </div>
+
+        <?php } ?>
+
+
+        <form method="POST" class="auth-form">
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                name="login"
+                class="login-btn"
+            >
+                Login
+            </button>
+
+        </form>
+
+
+        <!-- =========================
+             REGISTER LINK
+        ========================= -->
+
+        <div class="auth-register">
+
+            <span>
+                Don't have an account?
+            </span>
+
+            <a href="register.php">
+                Register
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
 
 <?php
 include "includes/footer.php";

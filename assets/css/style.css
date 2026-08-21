@@ -41,7 +41,6 @@ img {
 
 .page-container {
     min-height: 100vh;
-
     display: flex;
     flex-direction: column;
 }
@@ -49,11 +48,8 @@ img {
 .content {
     width: 100%;
     max-width: 1200px;
-
     margin: 0 auto;
-
     padding: 35px 25px;
-
     flex: 1;
 }
 
@@ -102,7 +98,6 @@ img {
 
 .navbar-brand h2::before {
     content: "✦ ";
-
     color: #d4af37;
 }
 
@@ -124,7 +119,6 @@ img {
 
 .menu a:hover {
     color: #d4af37;
-
     transform: translateY(-1px);
 }
 
@@ -298,13 +292,11 @@ img {
 
 .blog-section {
     width: 100%;
-
     padding-bottom: 70px;
 }
 
 .section-heading {
     text-align: center;
-
     margin-bottom: 35px;
 }
 
@@ -336,7 +328,6 @@ img {
 
 .section-heading p {
     color: #777;
-
     font-size: 16px;
 }
 
@@ -408,9 +399,7 @@ img {
 
 .search-form input:focus {
     border: none;
-
     outline: none;
-
     box-shadow: none;
 }
 
@@ -665,7 +654,6 @@ img {
 
 .read-more-premium span {
     font-size: 20px;
-
     transition: 0.3s ease;
 }
 
@@ -700,7 +688,6 @@ img {
 
 .edit-link {
     color: #a67c00;
-
     font-weight: bold;
 }
 
@@ -710,7 +697,6 @@ img {
 
 .delete-link {
     color: #c0392b;
-
     font-weight: bold;
 }
 
@@ -851,7 +837,7 @@ button:hover {
    FORMS
 ===================================================== */
 
-form:not(.search-form) {
+form:not(.search-form):not(.auth-form) {
     width: 100%;
 
     max-width: 540px;
@@ -917,7 +903,6 @@ select:focus {
 
 textarea {
     min-height: 180px;
-
     resize: vertical;
 }
 
@@ -936,7 +921,6 @@ textarea {
 
 .dashboard h1 {
     color: #222;
-
     font-size: 38px;
 }
 
@@ -956,7 +940,6 @@ textarea {
 
 .dashboard p {
     color: #666;
-
     font-size: 17px;
 }
 
@@ -1048,7 +1031,6 @@ textarea {
 
 .table-container {
     width: 100%;
-
     overflow-x: auto;
 }
 
@@ -1180,13 +1162,341 @@ tr:hover td {
 
 .footer strong::after {
     content: " ✦";
-
     color: #d4af37;
+}
+
+.footer-subtitle {
+    margin-top: 5px !important;
+    color: #777 !important;
+    font-size: 12px !important;
 }
 
 
 /* =====================================================
-   HR
+   LOGIN / AUTHENTICATION PAGE
+===================================================== */
+
+.auth-page {
+    width: 100%;
+
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 50px 20px;
+}
+
+
+/* =====================================================
+   LOGIN CARD
+===================================================== */
+
+.auth-card {
+    width: 100%;
+
+    max-width: 450px;
+
+    background: #ffffff;
+
+    padding: 42px 40px;
+
+    border-radius: 22px;
+
+    border: 1px solid #e6e2d8;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.10);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Gold top line */
+
+.auth-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #b8962e,
+        #d4af37,
+        #f0d56a,
+        #d4af37,
+        #b8962e
+    );
+}
+
+
+/* =====================================================
+   LOGIN HEADER
+===================================================== */
+
+.auth-header {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.auth-icon {
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111111,
+            #333333
+        );
+
+    font-size: 28px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.auth-header h1 {
+    margin: 0 0 8px;
+
+    color: #222222;
+
+    font-size: 32px;
+
+    font-weight: 800;
+}
+
+.auth-header p {
+    margin: 0;
+
+    color: #777777;
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   LOGIN ERROR
+===================================================== */
+
+.auth-error {
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    padding: 13px 15px;
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+    border-left: 4px solid #c0392b;
+
+    border-radius: 8px;
+
+    color: #991b1b;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   LOGIN FORM
+===================================================== */
+
+.auth-form {
+    width: 100% !important;
+
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+}
+
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #333333;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.form-group input {
+    width: 100%;
+
+    margin: 0 !important;
+
+    padding: 14px 15px;
+
+    border: 1px solid #d6d3cc;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #222222;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: #aaaaaa;
+}
+
+.form-group input:focus {
+    border-color: #d4af37;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(212, 175, 55, 0.15);
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   LOGIN BUTTON
+===================================================== */
+
+.auth-button {
+    width: 100%;
+
+    margin-top: 8px;
+
+    padding: 15px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111111,
+            #333333
+        );
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.auth-button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #b8962e
+        );
+
+    color: #111111;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(212, 175, 55, 0.30);
+}
+
+
+/* =====================================================
+   REGISTER LINK
+===================================================== */
+
+.auth-register {
+    margin-top: 25px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #e6e2d8;
+
+    text-align: center;
+
+    color: #777777;
+
+    font-size: 14px;
+}
+
+.auth-register a {
+    margin-left: 5px;
+
+    color: #a67c00;
+
+    font-weight: 800;
+
+    transition: 0.3s ease;
+}
+
+.auth-register a:hover {
+    color: #d4af37;
+
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   HORIZONTAL LINE
 ===================================================== */
 
 hr {
@@ -1250,12 +1560,6 @@ hr {
         font-size: 32px;
     }
 
-    /*
-       IMPORTANT:
-       Blog cards become one column
-       on tablets/mobile.
-    */
-
     .blog-grid {
         grid-template-columns: 1fr;
 
@@ -1280,8 +1584,12 @@ hr {
         padding: 25px 20px;
     }
 
-    form:not(.search-form) {
+    form:not(.search-form):not(.auth-form) {
         padding: 25px 20px;
+    }
+
+    .auth-page {
+        min-height: 600px;
     }
 }
 
@@ -1382,11 +1690,440 @@ hr {
         font-size: 30px;
     }
 
-    form:not(.search-form) {
+    form:not(.search-form):not(.auth-form) {
         padding: 25px 18px;
+    }
+
+    .auth-page {
+        min-height: 580px;
+
+        padding: 35px 12px;
+    }
+
+    .auth-card {
+        padding: 35px 22px;
+
+        border-radius: 18px;
+    }
+
+    .auth-header h1 {
+        font-size: 28px;
+    }
+
+    .auth-icon {
+        width: 58px;
+
+        height: 58px;
+
+        font-size: 24px;
+    }
+
+    .auth-register {
+        font-size: 13px;
     }
 
     .footer {
         padding: 25px 12px;
     }
+}
+/* =====================================================
+   LOGIN / AUTHENTICATION
+===================================================== */
+
+.auth-container {
+    width: 100%;
+
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 50px 20px;
+}
+
+
+/* =====================================================
+   LOGIN BOX
+===================================================== */
+
+.auth-box {
+    width: 100%;
+
+    max-width: 470px;
+
+    background: #ffffff;
+
+    padding: 45px 40px;
+
+    border-radius: 22px;
+
+    border: 1px solid #e6e2d8;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.10);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Gold top line */
+
+.auth-box::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #a67c00,
+        #d4af37,
+        #f0d56a,
+        #d4af37,
+        #a67c00
+    );
+}
+
+
+/* =====================================================
+   LOGIN HEADER
+===================================================== */
+
+.auth-header {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.auth-icon {
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111111,
+            #333333
+        );
+
+    font-size: 27px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 0, 0, 0.18);
+}
+
+
+.auth-header h1 {
+    margin: 0 0 8px;
+
+    color: #222222;
+
+    font-size: 32px;
+
+    font-weight: 800;
+}
+
+
+.auth-header p {
+    margin: 0;
+
+    color: #777777;
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   ERROR MESSAGE
+===================================================== */
+
+.auth-error {
+    width: 100%;
+
+    margin-bottom: 22px;
+
+    padding: 13px 15px;
+
+    border-radius: 9px;
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+    color: #991b1b;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   LOGIN FORM
+===================================================== */
+
+.auth-form {
+    width: 100% !important;
+
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+}
+
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group {
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #333333;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.form-group input {
+    width: 100%;
+
+    height: 50px;
+
+    margin: 0;
+
+    padding: 13px 15px;
+
+    border: 1px solid #d6d3cc;
+
+    border-radius: 9px;
+
+    background: #fafafa;
+
+    color: #222222;
+
+    font-size: 15px;
+
+    transition: all 0.3s ease;
+}
+
+
+.form-group input::placeholder {
+    color: #999999;
+}
+
+
+.form-group input:hover {
+    border-color: #b8a46a;
+}
+
+
+.form-group input:focus {
+    outline: none;
+
+    background: #ffffff;
+
+    border-color: #d4af37;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(212, 175, 55, 0.15);
+}
+
+
+/* =====================================================
+   LOGIN BUTTON
+===================================================== */
+
+.login-btn {
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 5px;
+
+    padding: 13px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111111,
+            #333333
+        );
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+.login-btn:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #b8962e
+        );
+
+    color: #111111;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(212, 175, 55, 0.30);
+}
+
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   REGISTER LINK
+===================================================== */
+
+.auth-register {
+    margin-top: 28px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #e6e2d8;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #777777;
+}
+
+
+.auth-register a {
+    margin-left: 5px;
+
+    color: #a67c00;
+
+    font-weight: 800;
+
+    transition: 0.3s ease;
+}
+
+
+.auth-register a:hover {
+    color: #d4af37;
+
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   LOGIN RESPONSIVE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .auth-container {
+        min-height: auto;
+
+        padding: 40px 15px;
+    }
+
+    .auth-box {
+        padding: 38px 25px;
+
+        border-radius: 18px;
+    }
+
+    .auth-header h1 {
+        font-size: 28px;
+    }
+
+    .auth-icon {
+        width: 58px;
+
+        height: 58px;
+
+        font-size: 24px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .auth-box {
+        padding: 35px 20px;
+    }
+
+    .auth-header h1 {
+        font-size: 25px;
+    }
+
+    .auth-register {
+        font-size: 13px;
+    }
+
 }

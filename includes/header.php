@@ -17,8 +17,7 @@
 
     <!-- Premium CSS -->
     <link rel="stylesheet"
-          href="/assets/css/style.css?v=3">
-
+      href="/assets/css/style.css?v=5">
 </head>
 
 <body class="page-container">

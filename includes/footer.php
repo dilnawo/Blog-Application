@@ -18,5 +18,8 @@
 
 </footer>
 
+<!-- JavaScript -->
+<script src="/assets/js/script.js?v=1"></script>
+
 </body>
 </html>

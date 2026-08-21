@@ -7,13 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.querySelector(".search-form input");
 
     if (searchInput) {
+
         searchInput.addEventListener("focus", function () {
-            this.style.borderColor = "#6d28d9";
+            this.style.borderColor = "#d4af37";
         });
 
         searchInput.addEventListener("blur", function () {
-            this.style.borderColor = "#d1d5db";
+            this.style.borderColor = "#d6d3cc";
         });
+
     }
 
 });

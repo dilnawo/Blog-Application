@@ -115,3 +115,21 @@ University of Moratuwa, Sri Lanka
 ---
 
 ⭐ If you find this project interesting, feel free to explore the repository!
+---
+
+## 🖥️ Website Screenshots
+
+### 🏠 Home Page
+![Home Page](screenshots/Home.png)
+
+### 📝 Registration Page
+![Registration Page](screenshots/Register.png)
+
+### 👤 User Dashboard
+![User Dashboard](screenshots/Dashboard.png)
+
+### 📚 View Blogs
+![View Blogs](screenshots/View%20Blogs.png)
+
+### ✍️ Create Blog
+![Create Blog](screenshots/Create%20Blog.png)

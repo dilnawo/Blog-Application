@@ -125,6 +125,9 @@ University of Moratuwa, Sri Lanka
 ### 📝 Registration Page
 ![Registration Page](screenshots/Register.png)
 
+### 🔐 Login Page
+![Login Page](screenshots/Login.png)
+
 ### 👤 User Dashboard
 ![User Dashboard](screenshots/Dashboard.png)
 
